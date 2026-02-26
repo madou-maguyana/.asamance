@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richesse Casamançaise - Papa Moussa Mamadou Lamine Sambou</title>
+    <style>
+        /* DESIGN GLOBAL */
+        body {
+            background-color: #f0f2f0;
+            background-image: linear-gradient(to bottom, #e8f5e9, #f0f2f0); 
+            font-family: 'Times New Roman', Times, serif;
+            color: #2e7d32;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* LE PARCHEMIN */
+        .manuscrit {
+            background-color: #ffffff;
+            max-width: 850px;
+            width: 100%;
+            padding: 60px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-top: 10px solid #f9a825;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #1b5e20;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .sous-titre {
+            text-align: center;
+            font-style: italic;
+            color: #f9a825;
+            margin-bottom: 50px;
+            font-size: 1.3em;
+        }
+
+        /* STYLE DES VERS */
+        .strophe {
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-size: 1.3em;
+            text-align: left;
+            white-space: pre-line;
+        }
+
+        .emphase {
+            font-weight: bold;
+            color: #1b5e20;
+            text-decoration: underline rgba(249, 168, 37, 0.3);
+        }
+
+        /* ZONE SIGNATURE ET BOUTON */
+        .zone-auteur {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 60px;
+            border-top: 1px dashed #ccc;
+            padding-top: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .auteur-nom {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        .btn-photo {
+            background-color: #1b5e20;
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 0.9em;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .btn-photo:hover {
+            background-color: #f9a825;
+            transform: translateY(-2px);
+        }
+
+        /* FENÊTRE MODALE POUR LA PHOTO */
+        #modalPhoto {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: apparition 0.4s ease;
+        }
+
+        @keyframes apparition {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .close-btn {
+            margin-top: 15px;
+            cursor: pointer;
+            color: #cc0000;
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px 10px;
+        }
+
+        footer { margin-top: 50px; color: #7f8c8d; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+    <div class="manuscrit">
+        <h1>Richesse Casamançaise</h1>
+        <div class="sous-titre">L'âme des terroirs et des cœurs</div>
+
+        <div class="strophe">
+            Sous la voûte des arbres bercé par le souffle croisé du vent,
+            S’élève une parole plus forte que le vent, dandinant.
+            L’homme ici est un arbre aux racines de fer,
+            Dont la sève est l’honneur et un fruit sincère.
+        </div>
+
+        <div class="strophe">
+            Du <span class="emphase">Diola</span> de la Basse-Casamance, entre fleuve et bois,
+            De Ziguinchor à Oussouye, il suit une seule loi :
+            Ne jamais trahir le sceau du grand secret,
+            Car dans le Bois sacré, son honneur est parfait.
+        </div>
+
+        <div class="strophe">
+            L’honnêteté ici n’est pas un vain mot d’or,
+            C’est le poids d’une vie, le plus noble des trésors.
+            À Sédhiou, le <span class="emphase">Mandingue</span> aux gestes souverains,
+            Protège le Kankourang comme un frère sur le chemin.
+            À Kolda, le <span class="emphase">Peul</span>, le cœur du Fouladou,
+            Chante la vérité prosternée devant tout.
+        </div>
+
+        <div class="strophe">
+            Voyez le <span class="emphase">Mankagne</span> et le <span class="emphase">Manjaque</span> aux yeux qui pédalent,
+            Portant sur leurs épaules la trame ancestrale.
+            Leurs pagnes tissés, fils de coton et de foi,
+            Disent la dignité mieux que n’importe quel roi.
+            Chaque motif est un serment, chaque geste un lien,
+            Unissant des familles dans la peine ou la joie.
+        </div>
+
+        <div class="strophe">
+            Si le <span class="emphase">Balante</span> de la frontière, au sud effleurant,
+            Offre le vin de palme en un geste franc,
+            C’est que le riz du bolong n’a le goût du miel
+            Que s’il est partagé sous un même ciel.
+            Le <span class="emphase">Bainouk</span>, fils premier, gardien des anciens temps,
+            Veille sur cette paix, à travers les ans.
+        </div>
+
+        <div class="strophe">
+            Point de palais de marbre, point de rois couronnés,
+            Mais des cœurs de guerriers à la droiture déchainée.
+            Le Bombolong résonne de la forêt à la plaine,
+            Chassant de ces terres le mensonge et la haine.
+            Ici, le toi et le moi s’effacent dans le nous,
+            Et la fourberie s’incline humblement à genoux.
+        </div>
+
+        <div class="strophe">
+            Ô peuple de Casamance, gardien de la foi,
+            Ta loi est la justice, ta richesse est ta voix.
+            Que ton sang reste pur comme l’eau du bolong,
+            Fidèle à ta parole, éclaire les siècles si longs.
+            Dans ton souffle, l’homme se tient debout,
+            Libre, loyal, invincible et fier partout.
+        </div>
+
+        <div class="strophe">
+            En Casamance, chaque geste est un témoignage de fidélité et de respect.
+            La modestie y règne sans aucun doute,
+            Les démons ne les envoutent.
+            A travers la Casamance, inclinons les valeurs africaines ancestrales par tout leur aspects.
+            En Casamance, le <span class="emphase">Mancagne</span>, le <span class="emphase">Manjack</span>, le <span class="emphase">Diola</span>, le <span class="emphase">Balante</span>, le <span class="emphase">Socé</span>, le <span class="emphase">Peul</span>, le <span class="emphase">Sérère</span>, créent une ardente symphonie intentionnée.
+            Qui sans aucun répit, nous mène dans une parfaite harmornie ;
+            La Casamance, unie, solidaire avec des cœurs passionnés.
+        </div>
+
+        <div class="zone-auteur">
+            <button class="btn-photo" onclick="ouvrirPhoto()">DÉCOUVRIR L'AUTEUR</button>
+            <div class="auteur-nom">PAPA MOUSSA MAMADOU LAMINE SAMBOU</div>
+        </div>
+    </div>
+
+    <div id="modalPhoto" onclick="fermerPhoto()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img src="auteur.jpg" alt="Papa Moussa Mamadou Lamine Sambou">
+            <p style="color: #333; margin-top: 15px; font-family: sans-serif;">L'auteur de Richesse Casamançaise</p>
+            <div class="close-btn" onclick="fermerPhoto()">[ Fermer ]</div>
+        </div>
+    </div>
+
+    <footer>Fait avec mon Partenaire de Code</footer>
+
+    <script>
+        function ouvrirPhoto() {
+            document.getElementById('modalPhoto').style.display = 'flex';
+        }
+
+        function fermerPhoto() {
+            document.getElementById('modalPhoto').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
